@@ -141,11 +141,7 @@ data = new int[capacity];
 // Destructor
 IntArray::~IntArray() {
   
-   delete[] data;
-   data = nullptr;
-    delete[]data;
-    // TODO 7: Free the dynamic array using 'delete[]'
-    //         Notify Tracker that an object was destroyed
+    delete[] data;
     Tracker::objectDestroyed();
 }
 
@@ -159,9 +155,7 @@ IntArray::IntArray(const IntArray& other) {
         data[i] = other.data[i];
 }
 
-    // TODO 8: Deep copy - allocate new memory and copy elements
-    //         Don't forget to copy capacity and count
-    //         Notify Tracker that an object was created
+    Tracker::objectCreated();
 
 }
 // Copy Assignment Operator
